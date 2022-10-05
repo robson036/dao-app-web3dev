@@ -6,8 +6,6 @@ import Welcome from "./pages/welcomePage"
 function App() {
     const { address, hasClaimedNFT } = useNft()
 
-    console.log("Address: ", address)
-
     if (!address) {
         return <Welcome />
     }
