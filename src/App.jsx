@@ -1,26 +1,22 @@
-import { useAddress, useMetamask } from "@thirdweb-dev/react"
+import useNft from "./hooks/useNft"
+import MemberArea from "./pages/memberArea"
+import MintNft from "./pages/mintNft"
+import Welcome from "./pages/welcomePage"
 
 function App() {
-    const address = useAddress()
-    const connectWithMetamask = useMetamask()
+    const { address, hasClaimedNFT } = useNft()
 
     console.log("Address: ", address)
 
-    return (
-        <div className="landing">
-            <h1>Bem-vindos à ExtractoDAO</h1>
+    if (!address) {
+        return <Welcome />
+    }
 
-            {address && <h2>Carteira conectada</h2>}
+    if (hasClaimedNFT) {
+        return <MemberArea />
+    }
 
-            <button
-                className="btn-hero"
-                disabled={address && address}
-                onClick={connectWithMetamask}
-            >
-                Conectar metamask
-            </button>
-        </div>
-    )
+    return <MintNft />
 }
 
 export default App
