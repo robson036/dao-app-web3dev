@@ -1,7 +1,7 @@
-import useNft from "../hooks/useNft"
+import useDaoTokens from "../hooks/useDaoTokens"
 
 const MintNft = () => {
-    const { isClaiming, mintNft } = useNft()
+    const { isClaiming, mintNft } = useDaoTokens()
     return (
         <div className="mint-nft">
             <h1>Cunhe gratuitamente seu NFT de membro 🥩 da ExtractoDAO</h1>

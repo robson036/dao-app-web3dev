@@ -1,10 +1,10 @@
-import useNft from "./hooks/useNft"
+import useDaoTokens from "./hooks/useDaoTokens"
 import MemberArea from "./pages/memberArea"
 import MintNft from "./pages/mintNft"
 import Welcome from "./pages/welcomePage"
 
 function App() {
-    const { address, hasClaimedNFT } = useNft()
+    const { address, hasClaimedNFT } = useDaoTokens()
 
     if (!address) {
         return <Welcome />
@@ -18,3 +18,5 @@ function App() {
 }
 
 export default App
+
+// TODO: endereço do token ERC20: 0xeE35aa9ac05788F56911795C85BC4aA124231CD6

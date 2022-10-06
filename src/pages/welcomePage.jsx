@@ -1,7 +1,7 @@
-import useNft from "../hooks/useNft"
+import useDaoTokens from "../hooks/useDaoTokens"
 
 const Welcome = () => {
-    const { address, connectWithMetamask } = useNft()
+    const { address, connectWithMetamask } = useDaoTokens()
     return (
         <div className="landing">
             <h1>Bem-vindos à ExtractoDAO</h1>
